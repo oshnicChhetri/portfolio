@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+   box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+ 
+}
+
+
+
+
+.hero-container {
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); 
+  border-radius: 1rem;  
+  
+
+  
+
+  border: 1px solid #e0e0e01b; 
+
+
+}
+
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.odd {
+  animation: odd 3s infinite; 
+}
+
+.even {
+  animation: even 3s infinite;
+}
+
+@keyframes odd {
+  0% {
+    transform: translateY(0); /* Start at normal position */
+  }
+ 
+  50% {
+    transform: translateY(-20px); /* Move up by 10px */
+  }
+  100% {
+    transform: translateY(0px); /* Move back to normal position */
+  }
+}
+
+@keyframes even {
+  0% {
+    transform: translateY(0); /* Start at normal position */
+  }
+  50% {
+    transform: translateY(20px); /* Move down by 10px */
+  }
+  100% {
+    transform: translateY(0); /* Move back to normal position */
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+ .odd {
+  animation: shake 3s infinite; 
+}
+
+.even {
+  animation: shake 3s infinite;
+}
+
+  
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
