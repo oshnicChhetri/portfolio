@@ -25,7 +25,7 @@ const Contact = () => {
       const response = await emailjs.send(
         "service_krrvzqg", // Replace with your EmailJS Service ID
         "template_bdmfeef", // Replace with your EmailJS Template ID
-        emailData,
+        { ...emailData } as Record<string, unknown>,
         "OH3oG559NN6ddE6ZV" // Replace with your EmailJS Public Key
       );
 
