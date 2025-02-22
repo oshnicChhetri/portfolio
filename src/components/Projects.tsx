@@ -14,7 +14,7 @@ const Projects = () => {
     const projects: Project[] = [
         { id: 1, name: "Real Time Chatting Platform", url: "#", repo: "https://github.com/oshnicChhetri/chat-app", href: "./chatApp.png" },
         { id: 2, name: "E-commerce", url:"https://eco-greentech.oshnic.com/ ", repo: "https://github.com/oshnicChhetri/e-commerce", href: "./eCommerce.png" },
-        { id: 3, name: "Personal Portfolio", url: "https://portfolio.oshnic.com/", repo: "https://github.com/oshnicChhetri/portfolio", href: "./eCommerce.png" }
+        { id: 3, name: "Personal Portfolio", url: "https://portfolio.oshnic.com/", repo: "https://github.com/oshnicChhetri/portfolio", href: "./portfolio.png" }
     ];
 
     return (

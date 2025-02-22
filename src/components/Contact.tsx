@@ -41,11 +41,12 @@ const Contact = () => {
   };
 
   return (
-   <div className="min-h-screen   flex flex-col items-center justify-center px-6 py-12  text-white">
+   <div className="min-h-screen  bg- flex flex-col items-center justify-center px-6 py-12  text-white">
       <h1 className="text-4xl font-extrabold mb-8">Contact Me</h1>
 
       <form
-        className="border-solid border-2   border-gray-300 shadow-xl rounded-2xl p-8 w-full max-w-[50rem]"
+        className="border-solid border-2 border-gray-300 shadow-xl rounded-2xl p-8 w-full max-w-[50rem] 
+  bg-[#121212] bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,rgba(140,139,220,0.2),rgba(10,10,10,0.8))]"
         onSubmit={handleSubmit}
       >
         <div className="mb-6">
