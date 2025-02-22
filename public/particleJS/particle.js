@@ -1,4 +1,6 @@
+
 const canva = document.querySelector("#canvas");
+console.log(canva)
 
 const ctx = canva.getContext("2d");
 
@@ -45,24 +47,6 @@ class Particle {
       this.directionY = -this.directionY;
     }
 
-    // let dx = mouse.x !== undefined ? mouse.x - this.x : 0;
-    // let dy = mouse.y !== undefined ? mouse.y - this.y : 0;
-    // let distanceSquared = dx * dx + dy * dy;
-    // if (distanceSquared < mouse.radius * mouse.radius) {
-    //   if (mouse.x < this.x && this.x < canva.width - this.size * 10) {
-    //     this.x += 10;
-    //   }
-    //   if (mouse.x > this.x && this.x > this.size * 10) {
-    //     this.x -= 10;
-    //   }
-
-    //   if (mouse.y < this.y && this.y < canva.height - this.size * 10) {
-    //     this.y += 10;
-    //   }
-    //   if (mouse.y > this.y && this.y > this.size * 10) {
-    //     this.y -= 10;
-    //   }
-    // }
 
     this.x += this.directionX;
     this.y += this.directionY;
@@ -149,3 +133,8 @@ window.addEventListener("mouseout", function () {
 });
 init();
 animate();
+
+
+
+
+
