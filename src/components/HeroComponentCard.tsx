@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import useIsInViewport from "../hooks/InView";
 
 const HeroComponentCard = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const viewPortCard = useIsInViewport(ref);
   const [x, setX] = useState<number>(0);
   const [y, setY] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -30,10 +33,11 @@ const HeroComponentCard = () => {
 
   return (
     <div
+    ref = {ref}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="cardComponent w-full lg:w-[40%] border-solid border-red-800 border-2 rounded-2xl px-4 py-12 sm:px-6 lg:px-8 relative"
+      className={`${viewPortCard ? "cardComponent" : ""} w-full lg:w-[40%] border-solid border-red-800 border-2 rounded-2xl px-4 py-12 sm:px-6 lg:px-8 relative`}
       style={{
         transformStyle: "preserve-3d",
         transform: `rotateX(${(y - 0.5) * 50}deg) rotateY(${(x - 0.5) * 50}deg)`, 

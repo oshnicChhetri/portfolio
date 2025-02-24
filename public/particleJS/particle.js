@@ -4,7 +4,7 @@ console.log(canva)
 
 const ctx = canva.getContext("2d");
 
-let particleDecider = 100000;
+let particleDecider = 40000;
 
 canva.width = window.innerWidth;
 canva.height = window.innerHeight;
@@ -73,6 +73,7 @@ function init() {
 }
 
 function connect() {
+  let opacityValue = 1;
   for (let i = 0; i < particlesArray.length; i++) {
     for (let j = i + 1; j < particlesArray.length; j++) {
       let distance =
@@ -82,13 +83,16 @@ function connect() {
           (particlesArray[i].y - particlesArray[j].y);
 
       if (distance < (canva.width / 5) * (canva.height / 5)) {
-        ctx.strokeStyle = "rgba(255,255,255,0.5)";
+        opacityValue = distance / 100000;
+        
+        ctx.strokeStyle = `rgba(255,255,255,${opacityValue})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
         ctx.stroke();
       }
+      
     }
   }
 }

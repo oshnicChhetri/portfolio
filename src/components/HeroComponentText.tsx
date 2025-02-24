@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState,  useRef } from "react";
+import useIsInViewport from "../hooks/InView";
 
 const HeroComponentText = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const viewPortText = useIsInViewport(ref);
   const name = ["O", "s", "h", "n", "i", "c", " ", "R", "i", "j", "a", "l"];
   const profession = ["F", "u", "l", "l", " ", "S", "t", "a", "c", "k", " ", "D", "e", "v", "e", "l", "o", "p", "e", "r"];
 
@@ -17,8 +20,8 @@ const HeroComponentText = () => {
   };
 
   return (
-    <div className="textComponent w-full lg:w-[45%] py-12 sm:px-6 lg:px-8">
-      {/* Name Section */}
+    <div ref={ref} className={`${viewPortText ? "textComponent" : ""} w-full lg:w-[45%] py-12 sm:px-6 lg:px-8`}>
+   
       <h1 className="mb-6 text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500">
         {name.map((char, index) => (
           <span

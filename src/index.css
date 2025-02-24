@@ -101,6 +101,21 @@
   }
 }
 
+.up{
+   animation : fadeInUP 1s ease-in-out;
+}
+
+@keyframes fadeInUP {
+  from {
+    opacity: 0;
+    transform: translateY(100px); /* Start from the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
 
 
 
