@@ -4,7 +4,7 @@ import { SiMongodb } from "react-icons/si";
 import { TbBrandMysql } from "react-icons/tb";
 import { SiPhp } from "react-icons/si";
 
-import {useState, useRef, useEffect} from "react";
+import { useRef} from "react";
 import  useIsInViewport  from "../hooks/InView.ts";
 
 interface Technologie {
